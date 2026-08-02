@@ -91,6 +91,7 @@ def main():
 
         elif choice == "5":
             filename = input("Enter the name of the file you want to edit = ")
+            edit_file(filename)
 
         elif choice == "6":
             print("Closing the app....")
