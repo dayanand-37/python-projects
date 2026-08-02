@@ -37,9 +37,23 @@ def delete_file(filename):
 
 def read_file(filename):
     try:
-        with open("filename", "r") as f:
+        with open(filename, "r") as f:
             content = f.read()
             print(f"The content of the '{filename}' : \n{content}")
+
+    except FileNotFoundError:
+        print(f"{filename} does not exists!")
+
+    except Exception as e:
+        print("An error occured!")
+
+
+def edit_file(filename):
+    try:
+        with open(filename, "a") as f:
+            content = input("Enter data to add = ")
+            f.write(content + "\n")
+            print(f"Content is added successfully in the file {filename}")
 
     except FileNotFoundError:
         print(f"{filename} does not exists!")
