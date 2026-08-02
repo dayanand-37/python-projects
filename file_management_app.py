@@ -21,3 +21,28 @@ def view_all_files():
         print("files in directory!")
         for file in files:
             print(file)
+
+
+def delete_file(filename):
+    try:
+        os.remove(filename)
+        print(f"{filename} is deleted successfully!")
+
+    except FileNotFoundError:
+        print("file not found!")
+
+    except Exception as e:
+        print("An error occured")
+
+
+def read_file(filename):
+    try:
+        with open("filename", "r") as f:
+            content = f.read()
+            print(f"The content of the '{filename}' : \n{content}")
+
+    except FileNotFoundError:
+        print(f"{filename} does not exists!")
+
+    except Exception as e:
+        print("An error occured!")
